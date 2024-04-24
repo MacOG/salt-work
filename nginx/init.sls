@@ -1,3 +1,3 @@
 include:
-  - package.sls
-  - service.sls
+  - nginx.package
+  - nginx.service
