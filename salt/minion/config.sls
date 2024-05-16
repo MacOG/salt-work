@@ -6,4 +6,4 @@ Configure Salt-Minion:
     - user: root
     - group: root
     - defaults:
-        saltenv: {{ salt['pillar.get']('', prod) }}
+        saltenv: {{ salt['pillar.get']('saltenv', prod) }}
