@@ -24,7 +24,7 @@ Remove /etc/salt/minion.d/leader.conf:
 Ensure /etc/salt/minion is commented out:
   file.comment:
     - name: /etc/salt/minion
-    - regex: ^[^ #]
+    - regex: '^[^ #]'
     - char: '#'
 
 Remove /etc/salt/pki/minion/minion_master.pub:
