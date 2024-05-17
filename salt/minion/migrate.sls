@@ -34,7 +34,7 @@ Remove /etc/salt/pki/minion/minion_master.pub:
 Restart salt-minion service:
   service.running:
     - name: salt-minion
-    - enabled: True
+    - enable: True
     - onchanges:
       - file: /etc/salt/minion.d/autosign.conf
       - file: /etc/salt/minion.d/grains.conf
