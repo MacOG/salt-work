@@ -32,7 +32,8 @@ autosign_grains:
 #################################
 ## Salt-Minion - Custom Grains ## 
 #################################
-autosign_key: {{ autosign_grain_value }}
+grains:
+  autosign_key: {{ autosign_grain_value }}
 
 ###########################
 ## Salt-Minion - Logging ##
