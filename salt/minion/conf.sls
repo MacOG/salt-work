@@ -13,5 +13,3 @@ Configure Salt-Minion:
         autosign_grain: {{ salt['pillar.get']('autosign_grain') }}
         autosign_grain_value: {{ salt['pillar.get']('autosign_grain_value') }}
         log_level: {{ salt['pillar.get']('log_level', 'critical') }}
-    - require:
-      - pkg: salt-minion
