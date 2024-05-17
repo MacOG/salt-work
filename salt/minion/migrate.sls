@@ -31,11 +31,16 @@ Remove /etc/salt/pki/minion/minion_master.pub:
   file.absent:
     - name: /etc/salt/pki/minion/minion_master.pub
 
-Restart salt-minion service:
+Ensure salt-minion service is enabled and running:
   service.running:
     - name: salt-minion
     - enable: True
-    - watch:
+
+Restart Salt-Minion Service:
+  cmd.run:
+    - name: 'salt-call --local service.restart salt-minion'
+    - bg: True
+    - onchanges:
       - file: /etc/salt/minion.d/autosign.conf
       - file: /etc/salt/minion.d/grains.conf
       - file: /etc/salt/minion.d/leader.conf
