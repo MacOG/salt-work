@@ -35,7 +35,7 @@ Restart salt-minion service:
   service.running:
     - name: salt-minion
     - enable: True
-    - onchanges:
+    - watch:
       - file: /etc/salt/minion.d/autosign.conf
       - file: /etc/salt/minion.d/grains.conf
       - file: /etc/salt/minion.d/leader.conf
