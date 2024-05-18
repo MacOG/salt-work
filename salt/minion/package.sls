@@ -1,3 +1,6 @@
+include:
+  - salt.minion.repo
+
 Install Salt-Minion Service:
   pkg.installed:
     - name: salt-minion
