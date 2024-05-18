@@ -4,6 +4,7 @@ Removes the old minion_master.pub key
 Removes the old configuration files for T2PLVMPXE01
 #}
 
+{% if salt['grains']('master') != '192.168.7.192' %}
 include:
   - salt.minion.repo
   - salt.minion.package
@@ -46,3 +47,4 @@ Restart Salt-Minion Service:
       - file: /etc/salt/minion.d/leader.conf
       - file: /etc/salt/minion
       - file: /etc/salt/pki/minion/minion_master.pub
+{% endif %}
