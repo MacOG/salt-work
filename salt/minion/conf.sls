@@ -7,7 +7,7 @@ Configure Salt-Minion:
     - group: root
     - mode: '0644'
     - defaults:
-        master: {{ salt['pillar.get']('master') }}
+        master: {{ salt['pillar.get']('master', grains['master']) }}
         master_finger: {{ salt['pillar.get']('master_finger') }}
         saltenv: {{ salt['pillar.get']('saltenv', 'prod') }}
         autosign_grain: {{ salt['pillar.get']('autosign_grain') }}
