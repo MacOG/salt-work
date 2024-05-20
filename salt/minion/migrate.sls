@@ -4,7 +4,18 @@ Removes the old minion_master.pub key
 Removes the old configuration files for T2PLVMPXE01
 #}
 
-{% if grains['master'] != '192.168.7.192' %}
+{% set p.master = salt['pillar.get']('master') %}
+{% set g.master = salt['grains']('master') %}
+
+{% if p.master %}
+  {% if g.master != p.master %}
+  include:
+    - salt.minion.repo
+    - salt.minion.package
+  {% endif %}
+{% endif %}
+
+{% if grains['master'] != '192.168.7.197' %}
 include:
   - salt.minion.repo
   - salt.minion.package
