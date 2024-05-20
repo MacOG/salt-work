@@ -3,7 +3,7 @@ include:
 
 Configure Salt-Minion:
   file.managed:
-    - name: /etc/salt/minion.d/gd_minion.conf
+    - name: /etc/salt/minion.d/gd_minion2.conf
     - source: salt://salt/minion/files/gd_minion.tmpl
     - template: jinja
     - user: root
