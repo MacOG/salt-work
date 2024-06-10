@@ -1,4 +1,4 @@
 List Minion Key:
   salt.wheel:
-    - key.list
+    - name: key.list
   
