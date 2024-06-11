@@ -1,3 +1,3 @@
 Remove Minion Key:
   event.send:
-    - tag: 'salt/minion/migrated'
+    - tag: salt/minion/migrated
