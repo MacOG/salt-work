@@ -8,7 +8,7 @@ Remove Minion Key:
 
 Restart Salt-Minion:
   cmd.run:
-    - name: salt-call --local service.stop salt-minion
+    - name: salt-call --local service.restart salt-minion
     - bg: True
     - onchanges:
       - file: /etc/salt/pki/minion/minion_master.pub
